@@ -24,14 +24,8 @@ def isListPalindrome(head):
     # Deal with even or odd number of elements.
     tail = node.next if fast else node
 
-    # compare reverse element and next half elements.
-    while prev:
-        if prev.value == tail.value:
-            tail = tail.next
-            prev = prev.next
-        else:
-            return False
-    return True
+    # Compare reversed half and remanining elements.
+    return ll.are_equal(prev, tail)
 
 
 def tests():
@@ -46,7 +40,6 @@ def tests():
                   ([7, 8, 6, 3, 7, 3, 6, 8, 7], True),
                   ([7, 8, 6, 3, 7, 4, 6, 8, 7], False)]
     for inp, expected in test_cases:
-        ll.print_linked_list(ll.list_to_link(inp))
         res = isListPalindrome(ll.list_to_link(inp))
         if res != expected:
             print("%s: %d != %d" % (inp, res, expected))

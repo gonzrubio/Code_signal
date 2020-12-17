@@ -38,3 +38,14 @@ def reverse_linked_list(head):
         prev = node
         node = tmp
     return prev
+
+
+def are_equal(l1, l2):
+    """Return True if linked lists are equal or False otherwise."""
+    while l1 and l2:
+        if l1.value == l2.value:
+            l1 = l1.next
+            l2 = l2.next
+        else:
+            return False
+    return True
