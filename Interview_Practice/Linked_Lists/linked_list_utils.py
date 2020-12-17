@@ -26,3 +26,18 @@ def print_linked_list(head):
         print(curr.value, end="->")
         curr = curr.next
     print("NULL")
+
+
+def reverse_linked_list(head):
+    """Return the head of the reversed linked list."""
+    prev = None
+    node = head
+    while node:
+        tmp = node.next
+        node.next = prev
+        prev = node
+        node = tmp
+    return prev
+
+
+print_linked_list(reverse_linked_list(list_to_link([1, 2, 3, 4, 5])))
