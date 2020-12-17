@@ -6,32 +6,8 @@ remove all elements from list l that have a value equal to k.
 Note: Solve in O(n) time and O(1) additional space.
 """
 
-
-class ListNode(object):
-    """Linked list class."""
-
-    def __init__(self, x):
-        """Value of current node and pointer to next node."""
-        self.value = x
-        self.next = None
-
-
-def list_to_link(python_list):
-    """Return a Link from a Python list with the same elements."""
-    curr = root = ListNode(0)
-    for e in python_list:
-        curr.next = ListNode(e)
-        curr = curr.next
-    return root.next
-
-
-def print_linked_list(head):
-    """Print elements of a linked list."""
-    curr = head
-    while curr:
-        print(curr.value, end="->")
-        curr = curr.next
-    print()
+import linked_list_utils as ll
+from linked_list_utils import ListNode
 
 
 def removeKFromList(head, k):
@@ -58,8 +34,8 @@ def tests():
     # k = 0
     python_list = [0]
     k = 0
-    print_linked_list(list_to_link(python_list))
-    print_linked_list(removeKFromList(list_to_link(python_list), k))
+    ll.print_linked_list(ll.list_to_link(python_list))
+    ll.print_linked_list(removeKFromList(ll.list_to_link(python_list), k))
 
 
 if __name__ == "__main__":
