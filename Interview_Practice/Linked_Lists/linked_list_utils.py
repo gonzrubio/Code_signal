@@ -38,6 +38,3 @@ def reverse_linked_list(head):
         prev = node
         node = tmp
     return prev
-
-
-print_linked_list(reverse_linked_list(list_to_link([1, 2, 3, 4, 5])))
