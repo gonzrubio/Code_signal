@@ -25,4 +25,4 @@ def print_linked_list(head):
     while curr:
         print(curr.value, end="->")
         curr = curr.next
-    print()
+    print("NULL")
