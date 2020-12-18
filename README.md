@@ -1,2 +1,13 @@
-# Code_signal
-My attempts and solutions to exercises from https://codesignal.com/ 
+My attempts and solutions to problems from [CodeSignal](https://codesignal.com/).
+
+## [Interview Practice](https://app.codesignal.com/interview-practice)
+
+* Data Structures
+
+* Sorting and Searching
+
+* Dynamic Programming
+
+* Special topics
+
+* Math
