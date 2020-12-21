@@ -36,5 +36,8 @@ def tests():
 if __name__ == "__main__":
     tests()
 
-
-# Implement hash() with robin-algorithm/best solution in codesignal
+# Options
+# str.find() source code
+# Implement hash() with robin-algorithm
+# best solution in codesignal
+# Code review
