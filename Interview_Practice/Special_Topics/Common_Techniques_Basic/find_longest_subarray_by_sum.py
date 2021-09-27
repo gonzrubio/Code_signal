@@ -15,32 +15,49 @@ Created on Sun Sep 26 19:58:34 2021
 """
 
 
+# def findLongestSubarrayBySum(s, arr):
+#     """Return a two-element array that represent the bounds of the subarray."""
+#     ans = [-1]
+
+#     for left in range(len(arr)):
+#         curr_sum = arr[left]
+#         if curr_sum == s and len(ans) == 1:
+#             ans = [left + 1] * 2
+
+#         for right in range(left + 1, len(arr)):
+#             curr_sum += arr[right]
+
+#             if curr_sum == s:
+#                 # First found soltion
+#                 if len(ans) == 1:
+#                     ans = [left + 1, right + 1]
+#                 # Left bound is right bound
+#                 elif ans[1] == ans[0]:
+#                     ans = [left + 1, right + 1]
+#                 # Longer subarray
+#                 elif ans[1] - ans[0] < right - left:
+#                     ans = [left + 1, right + 1]
+
+#             elif curr_sum > s:
+#                 break
+
+#     return ans
+
+
 def findLongestSubarrayBySum(s, arr):
     """Return a two-element array that represent the bounds of the subarray."""
-    ans = [-1]
-
+    ans = [-1, -2]
+    s -= arr[0]
+    right = 0
     for left in range(len(arr)):
-        curr_sum = arr[left]
-        if curr_sum == s and len(ans) == 1:
-            ans = [left + 1] * 2
-
-        for right in range(left + 1, len(arr)):
-            curr_sum += arr[right]
-
-            if curr_sum == s:
-                # First found soltion
-                if len(ans) == 1:
-                    ans = [left + 1, right + 1]
-                # Left bound is right bound
-                elif ans[1] == ans[0]:
-                    ans = [left + 1, right + 1]
-                # Longer subarray
-                elif ans[1] - ans[0] < right - left:
-                    ans = [left + 1, right + 1]
-
-            elif curr_sum > s:
-                break
-
+        while right < len(arr) - 1 and s >= arr[right + 1]:
+            s -= arr[right + 1]
+            right += 1
+        if s == 0 and right - left > ans[-1] - ans[0]:
+            ans = [left + 1, right + 1]
+        s += arr[left]
+    if ans[0] == -1:
+        return [-1]
     return ans
 
 
