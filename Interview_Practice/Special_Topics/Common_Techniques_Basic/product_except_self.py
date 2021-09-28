@@ -24,7 +24,7 @@ Created on Mon Sep 27 07:32:01 2021
 #     for elem in nums:
 #         prod_nums *= elem
 
-#     g = sum([prod_nums/elem % m for elem in nums]) % m
+#     g = sum([prod_nums // elem % m for elem in nums]) % m
 
 #     return g
 
